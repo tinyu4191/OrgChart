@@ -464,6 +464,7 @@ function getOrgData() {
             const bossData = resData.find((e) => e.id === id)
             obj.name = bossData.name
             obj.department = bossData.department
+            if (boss.level !== 1) obj.collapsed = true
             if (boss.children.length > 0) obj.children = findChildren(boss.children)
 
             return obj
@@ -501,9 +502,9 @@ function paintOrgChart(dom, obj) {
                 name: 'tree1',
                 data: [data],
 
-                top: '2%',
+                top: '5%',
                 left: '0%',
-                bottom: '0%',
+                bottom: '20%',
                 right: '0%',
 
                 roam: true,
