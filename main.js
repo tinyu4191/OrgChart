@@ -534,15 +534,26 @@ function paintOrgChart(dom, obj) {
                         const data = e.data
                         let index = e.treeAncestors.length
                         let lineRichIndex
-                        if (index === 2) lineRichIndex = '{dd|}'
-                        else if (index === 3) lineRichIndex = '{ee|}'
-                        else if (index === 4) lineRichIndex = '{ff|}'
-                        else if (index === 5) lineRichIndex = '{gg|}'
+                        let avatar
+                        let indexRandom = Math.floor(Math.random() * 3) + 1
+                        if (index === 2) {
+                            lineRichIndex = '{dd|}'
+                            avatar = '{cc|}'
+                        } else if (index === 3) {
+                            lineRichIndex = '{ee|}'
+                            avatar = `{cc${indexRandom}|}`
+                        } else if (index === 4) {
+                            lineRichIndex = '{ff|}'
+                            avatar = `{cc${indexRandom}|}`
+                        } else if (index === 5) {
+                            lineRichIndex = '{gg|}'
+                            avatar = `{cc${indexRandom}|}`
+                        }
 
                         return [
                             [`{aa|${data.department}}`],
                             [lineRichIndex],
-                            ['{cc|}', `{bb|${data.name}}`].join(''),
+                            [avatar, `{bb|${data.name}}`].join(''),
                         ].join('\n')
                     },
                     rich: {
@@ -554,7 +565,31 @@ function paintOrgChart(dom, obj) {
                             width: 50,
                             height: 50,
                             backgroundColor: {
-                                image: 'https://icons-for-free.com/iconfiles/png/512/business+face+people+icon-1320086457520622872.png',
+                                image: './images/boss-avatar-1.png',
+                            },
+                            align: 'left',
+                        },
+                        cc1: {
+                            width: 50,
+                            height: 50,
+                            backgroundColor: {
+                                image: './images/male-avatar-1.png',
+                            },
+                            align: 'left',
+                        },
+                        cc2: {
+                            width: 50,
+                            height: 50,
+                            backgroundColor: {
+                                image: './images/male-avatar-2.png',
+                            },
+                            align: 'left',
+                        },
+                        cc3: {
+                            width: 50,
+                            height: 50,
+                            backgroundColor: {
+                                image: './images/female-avatar-1.png',
                             },
                             align: 'left',
                         },
