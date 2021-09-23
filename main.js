@@ -534,20 +534,17 @@ function paintOrgChart(dom, obj) {
                         const data = e.data
                         let index = e.treeAncestors.length
                         let lineRichIndex
-                        let avatar
-                        let indexRandom = Math.floor(Math.random() * 3) + 1
+                        let indexRandom = Math.floor(Math.random() * 6) + 1
+                        let avatar = `{cc${indexRandom}|}`
                         if (index === 2) {
                             lineRichIndex = '{dd|}'
                             avatar = '{cc|}'
                         } else if (index === 3) {
                             lineRichIndex = '{ee|}'
-                            avatar = `{cc${indexRandom}|}`
                         } else if (index === 4) {
                             lineRichIndex = '{ff|}'
-                            avatar = `{cc${indexRandom}|}`
                         } else if (index === 5) {
                             lineRichIndex = '{gg|}'
-                            avatar = `{cc${indexRandom}|}`
                         }
 
                         return [
@@ -590,6 +587,30 @@ function paintOrgChart(dom, obj) {
                             height: 50,
                             backgroundColor: {
                                 image: './images/female-avatar-1.png',
+                            },
+                            align: 'left',
+                        },
+                        cc4: {
+                            width: 50,
+                            height: 50,
+                            backgroundColor: {
+                                image: './images/female-avatar-2.png',
+                            },
+                            align: 'left',
+                        },
+                        cc5: {
+                            width: 50,
+                            height: 50,
+                            backgroundColor: {
+                                image: './images/female-avatar-3.png',
+                            },
+                            align: 'left',
+                        },
+                        cc6: {
+                            width: 50,
+                            height: 50,
+                            backgroundColor: {
+                                image: './images/male-avatar-3.png',
                             },
                             align: 'left',
                         },
