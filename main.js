@@ -658,6 +658,11 @@ function paintOrgChart(dom, obj) {
     }
 
     myChart.setOption(option)
+    setTimeout(function () {
+        window.addEventListener('resize', () => {
+            myChart.resize()
+        })
+    }, 200)
 }
 
 getOrgData()
